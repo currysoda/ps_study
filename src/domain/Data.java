@@ -1,10 +1,8 @@
 package domain;
 
-/**
- * @field Long id
- * @field String name
- */
-public class Data {
+import java.util.Objects;
+
+public class Data implements Comparable {
 	
 	private Long id;
 	
@@ -18,10 +16,29 @@ public class Data {
 	
 	@Override
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
 		
-		sb.append("id : " + id + "\n");
-		
-		return sb.toString();
+		return "id : " + id;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Data data = (Data) o;
+		return Objects.equals(id, data.id);
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(id);
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		return (int) (this.id - ((Data) o).getId());
 	}
 }

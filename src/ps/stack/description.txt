@@ -1,0 +1,89 @@
+
+stack 인터페이스에 구현 후
+Linked arrays 기반으로 따로 구현
+
+인터페이스에 의존해야지 구현 클래스에 의존하면 안된다.
+
+
+main method 코드(LinkedStack)
+```
+		BufferedReader br = new BufferedReader(new FileReader("src/dataset/dataexample.txt"));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		Stack ls = new LinkedStack();
+		ls.init();
+		System.out.println(ls.isEmpty());
+		System.out.println("---------------");
+
+		String input;
+
+		while ((input = br.readLine()) != null) {
+			Data      data = new Data((long) Integer.parseInt(input));
+			StackNode sn   = new StackNode(data);
+			System.out.println("ls.push(sn) = " + ls.push(sn));
+		}
+
+		System.out.println("---------------");
+		System.out.println("ls = " + ls + "\n");
+		System.out.println("---------------");
+
+		System.out.println("ls.peek() = " + ls.peek());
+
+		System.out.println("ls.pop() = " + ls.pop());
+		System.out.println("ls.pop() = " + ls.pop());
+		System.out.println("ls.pop() = " + ls.pop());
+
+		System.out.println("ls.peek() = " + ls.peek());
+
+		Data      data   = new Data(52L);
+		StackNode search = new StackNode(data);
+		System.out.println("ls.searchStackNode(search) = " + ls.searchStackNode(search));
+
+		System.out.println("---------------");
+		System.out.println("ls = " + ls);
+		System.out.println("---------------");
+		br.close();
+		bw.close();
+```
+
+main method 코드(ArraysStack)
+```
+BufferedReader br = new BufferedReader(new FileReader("src/dataset/dataexample.txt"));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		Stack ls = new ArraysStack();
+		ls.init();
+		System.out.println(ls.isEmpty());
+		System.out.println("---------------");
+
+		String input;
+
+		while ((input = br.readLine()) != null) {
+			Data      data = new Data((long) Integer.parseInt(input));
+			StackNode sn   = new StackNode(data);
+			System.out.println("ls.push(sn) = " + ls.push(sn));
+		}
+
+		System.out.println("---------------");
+		System.out.println("ls = " + ls + "\n");
+		System.out.println("---------------");
+
+		System.out.println("ls.peek() = " + ls.peek());
+
+		System.out.println("ls.pop() = " + ls.pop());
+		System.out.println("ls.pop() = " + ls.pop());
+		System.out.println("ls.pop() = " + ls.pop());
+
+		System.out.println("ls.peek() = " + ls.peek());
+
+		Data      data   = new Data(52L);
+		StackNode search = new StackNode(data);
+		System.out.println("ls.searchStackNode(search) = " + ls.searchStackNode(search));
+
+		System.out.println("---------------");
+		System.out.println("ls = " + ls);
+		System.out.println("---------------");
+		br.close();
+		bw.close();
+
+```

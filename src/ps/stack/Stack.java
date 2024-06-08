@@ -1,58 +1,20 @@
 package ps.stack;
 
-
-public class Stack {
+public interface Stack {
 	
-	private StackNode top;
-	private Long      count;
+	void init();
 	
-	public Stack() {
-		top = null;
-		Long count = 0L;
-	}
+	Boolean isEmpty();
 	
-	public void init() {
-		top = null;
-		count = 0L;
-	}
+	StackNode push(StackNode stackNode);
 	
-	public StackNode push(StackNode node) {
-		if (top == null) {
-		
-		}
-		else {
-		
-		}
-	}
+	StackNode pop();
 	
-	public StackNode pop(StackNode node) {
-		if (top == null) {
-		
-		}
-		else {
-		
-		}
-	}
+	StackNode peek();
 	
-	public StackNode peek() {
-		if (top == null) {
-		
-		}
-		else {
-		
-		}
-	}
+	Long nodeCount();
 	
-	public Long nodeCount() {
-		return count;
-	}
+	StackNode searchStackNode(StackNode stackNode);
 	
-	public StackNode searchStackNode() {
-		if (top == null) {
-		
-		}
-		else {
-		
-		}
-	}
+	void print();
 }

@@ -1,0 +1,68 @@
+queue 인터페이스에 구현 후
+Linked arrays 기반으로 따로 구현
+
+인터페이스에 의존해야지 구현 클래스에 의존하면 안된다.
+
+
+``` LinkedQueue
+BufferedReader br = new BufferedReader(new FileReader("src/dataset/dataexample.txt"));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		Queue queue = new LinkedQueue();
+		queue.init();
+		System.out.println(queue.isEmpty());
+
+		String input;
+		while ((input = br.readLine()) != null) {
+			Data      data      = new Data((long) Integer.parseInt(input));
+			QueueNode queueNode = new QueueNode(data);
+			QueueNode inNode    = queue.inQueue(queueNode);
+		}
+
+		System.out.println("--------------------");
+		System.out.println("queue = " + queue);
+		System.out.println("--------------------");
+		System.out.println("peek = " + queue.peek().getData().getId());
+		System.out.println("--------------------");
+		System.out.println("queue.deQueue() = " + queue.deQueue());
+		System.out.println("queue.deQueue() = " + queue.deQueue());
+		System.out.println("queue.deQueue() = " + queue.deQueue());
+		System.out.println("--------------------");
+		System.out.println("queue = " + queue);
+
+
+		br.close();
+		bw.close();
+```
+
+
+``` ArraysQueue
+		BufferedReader br = new BufferedReader(new FileReader("src/dataset/dataexample.txt"));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		Queue queue = new ArraysQueue();
+		queue.init();
+		System.out.println(queue.isEmpty());
+
+		String input;
+		while ((input = br.readLine()) != null) {
+			Data      data      = new Data((long) Integer.parseInt(input));
+			QueueNode queueNode = new QueueNode(data);
+			QueueNode inNode    = queue.inQueue(queueNode);
+		}
+
+		System.out.println("--------------------");
+		System.out.println("queue = " + queue);
+		System.out.println("--------------------");
+		System.out.println("peek = " + queue.peek().getData().getId());
+		System.out.println("--------------------");
+		System.out.println("queue.deQueue() = " + queue.deQueue());
+		System.out.println("queue.deQueue() = " + queue.deQueue());
+		System.out.println("queue.deQueue() = " + queue.deQueue());
+		System.out.println("--------------------");
+		System.out.println("queue = " + queue);
+
+
+		br.close();
+		bw.close();
+```
