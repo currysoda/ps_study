@@ -1,4 +1,4 @@
-package ps.stack;
+package datastructure.stack;
 
 public interface Stack {
 	

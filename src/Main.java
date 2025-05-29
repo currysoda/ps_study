@@ -3,17 +3,11 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-import ps.queue.ArraysQueue;
-import ps.queue.LinkedQueue;
-import ps.queue.Queue;
-import ps.queue.QueueNode;
-import ps.stack.ArraysStack;
-import ps.stack.LinkedStack;
-import ps.stack.Stack;
-import ps.stack.StackNode;
+import datastructure.queue.LinkedQueue;
+import datastructure.queue.Queue;
+import datastructure.queue.QueueNode;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

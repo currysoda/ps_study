@@ -1,8 +1,7 @@
-package ps.queue;
+package datastructure.queue;
 
 import java.util.ArrayList;
 import java.util.List;
-import ps.stack.StackNode;
 
 public class ArraysQueue implements Queue {
 	

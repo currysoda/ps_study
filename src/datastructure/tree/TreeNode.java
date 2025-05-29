@@ -1,4 +1,4 @@
-package ps.tree;
+package datastructure.tree;
 
 public class TreeNode {
 

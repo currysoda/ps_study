@@ -1,6 +1,4 @@
-package ps.queue;
-
-import ps.stack.LinkedStack;
+package datastructure.queue;
 
 public class LinkedQueue implements Queue {
 	

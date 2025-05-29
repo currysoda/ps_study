@@ -1,4 +1,4 @@
-package ps.stack;
+package datastructure.stack;
 
 
 import domain.Data;
