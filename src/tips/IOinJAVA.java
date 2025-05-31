@@ -36,6 +36,7 @@ public class IOinJAVA {
 		br.close();
 		bw.close();
 		
+		// 예시용 Scanner 클래스로 윗 부분을 주석처리해야 정상 작동함
 		Scanner sc = new Scanner(System.in);
 		
 		int i = 0;
