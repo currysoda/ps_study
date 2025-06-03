@@ -1,4 +1,4 @@
-package datastructure.queue;
+package datastructures.queue;
 
 import domain.Data;
 

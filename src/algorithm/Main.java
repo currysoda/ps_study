@@ -8,11 +8,11 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		List<Integer> list = generatedList(10);
+		List<Integer> list = generatedList(20);
 		
 		System.out.println("list = " + list);
 		
-		SortSet.insertSort(list);
+		SortSet.quickSort(list);
 		
 		System.out.println("list = " + list);
 		

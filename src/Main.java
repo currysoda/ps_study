@@ -5,9 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
-import datastructure.queue.LinkedQueue;
-import datastructure.queue.Queue;
-import datastructure.queue.QueueNode;
+import datastructures.queue.LinkedQueue;
+import datastructures.queue.Queue;
+import datastructures.queue.QueueNode;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.

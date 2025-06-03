@@ -1,4 +1,4 @@
-package datastructure.queue;
+package datastructures.queue;
 
 public interface Queue {
 	
