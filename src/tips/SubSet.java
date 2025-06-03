@@ -1,5 +1,6 @@
 package tips;
 
+// 부분집합의 경우의 수 찾기
 public class SubSet {
 	
 	public static void main(String[] args) {

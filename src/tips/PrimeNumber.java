@@ -1,5 +1,6 @@
 package tips;
 
+// 소수(PrimeNumber) 찾기
 public class PrimeNumber {
 	
 	/**

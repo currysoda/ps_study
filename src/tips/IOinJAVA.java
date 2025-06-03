@@ -7,7 +7,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
+// 자바로 PS 할 때 입출력하기
 public class IOinJAVA {
+	
 	/**
 	 * java.io.* 클래스를 이용한 자바 입출력
 	 * newline 으로 String 단위로 입력받으며 줄바꿈 문자를 만날때까지 한줄씩 읽는다.
@@ -22,9 +24,9 @@ public class IOinJAVA {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringBuilder sb = new StringBuilder();
+		StringBuilder  sb = new StringBuilder();
 		
-		String str = "";
+		String str     = "";
 		String newline = System.lineSeparator();
 		
 		while ((str = br.readLine()) != null) {

@@ -2,6 +2,10 @@
 
 > 참고 : [Velog](https://velog.io/@currysoda/posts)
 
+### algorithm
+
+- 정렬
+
 ### datastructures
 
 - 스택
