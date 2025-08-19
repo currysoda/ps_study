@@ -1,5 +1,8 @@
 ### Custom ###
 .editorconfig
+.cursor/
+.cursor/*
+.cursor/**
 
 ### IntelliJ IDEA ###
 out/
