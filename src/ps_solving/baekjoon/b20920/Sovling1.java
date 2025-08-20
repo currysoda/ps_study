@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Main {
+public class Sovling1 {
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -43,11 +43,27 @@ public class Main {
 		}
 		
 		List<String> result = new ArrayList<>(mode.keySet());
-		result.sort(
-			Comparator.<String, Integer>comparing(s -> mode.getOrDefault(s, 0), Comparator.reverseOrder())
-			          .thenComparing(Comparator.comparing(String::length, Comparator.reverseOrder()))
-			          .thenComparing(Comparator.naturalOrder())
-		           );
+		
+		Comparator<String> comp = new Comparator<String>() {
+			@Override
+			public int compare(String o1, String o2) {
+				int a = mode.get(o1);
+				int b = mode.get(o2);
+				
+				if (a != b) {
+					return b - a;
+				}
+				
+				if (o1.length() != o2.length()) {
+					return o2.length() - o1.length();
+				}
+				
+				return o1.compareTo(o2);
+			}
+		};
+		
+		result.sort(comp);
+		
 		
 		for (String s : result) {
 			sb.append(s).append(newline);
@@ -59,4 +75,5 @@ public class Main {
 		br.close();
 		bw.close();
 	}
+	
 }
