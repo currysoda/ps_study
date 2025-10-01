@@ -1,4 +1,4 @@
-package datastructures.stack;
+package algorithm.stack;
 
 public interface Stack {
 	

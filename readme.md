@@ -22,12 +22,13 @@
 - b2447
 - b11729
 - b1074
+- b1260
 
 ### algorithm
 
 - 정렬
 
-### datastructures
+### algorithm.datastructures
 
 - 스택
 - 큐

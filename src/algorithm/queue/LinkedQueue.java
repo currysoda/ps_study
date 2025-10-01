@@ -1,4 +1,4 @@
-package datastructures.queue;
+package algorithm.queue;
 
 public class LinkedQueue implements Queue {
 	

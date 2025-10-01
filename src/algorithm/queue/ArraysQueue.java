@@ -1,4 +1,4 @@
-package datastructures.queue;
+package algorithm.queue;
 
 import java.util.ArrayList;
 import java.util.List;
