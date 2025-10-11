@@ -1,5 +1,4 @@
 package algorithm.graph;
 
-public class Graph {
-
+public class Edge {
 }
