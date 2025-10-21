@@ -15,7 +15,7 @@ public interface graph {
 	
 	void clearGraph();
 	
-	void isEmpty();
+	boolean isEmpty();
 	
 	int getEdgeCount();
 	
@@ -24,4 +24,8 @@ public interface graph {
 	List<Integer> getNeighbors(int vertex);
 	
 	void printEdgeAll();
+	
+	void dfs();
+	
+	void bfs();
 }
