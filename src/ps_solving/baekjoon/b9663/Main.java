@@ -43,12 +43,14 @@ public class Main {
 	
 	public static void nqueen(int[] board, int index, int N) {
 		
+		// 탈출조건 N 개의 퀸을 배치함
 		if (index == N)
 		{
 			count++;
 			return;
 		}
 		
+		// 이번 행(index) 에서 어느 열(j) 에 배치 할지를 정한다.
 		for (int j = 0; j < N; j++)
 		{
 			// 한 행에서 충돌이 없다면 진행
@@ -56,12 +58,12 @@ public class Main {
 			if (isAttack(board, index, j) == false)
 			{
 				board[index] = j;
+				// 이번 행에서 배치에 성공했다면 다음 행으로 넘어간다.
 				nqueen(board, index + 1, N);
 			}
-			// 한 행의 끝에서도 충돌이 발견되면 가능성 X => 종료 조건 하지만 명시적 구현이 필요하지 않음
+			// 이번 행에서 배치에 실패하면 이 가능성은 그대로 종료한다.
+			// => 이전 행의 다음 반복문이 실행된다.
 		}
-		// 배치가 제대로 되면 다음 행에 배치한다.
-		//		nqueen(board, index + 1, N);
 	}
 	
 	public static boolean isAttack(int[] board, int index, int col) {
