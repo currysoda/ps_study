@@ -42,6 +42,7 @@ public class Mss {
 	}
 	
 	// O(n) 의 시간 복잡도
+	// 카데인 알고리즘
 	// Math.max(이때까지의 합, arr[i]) == 이때까지의 합이 음수면 버리고 새로 시작
 	public static int mss(int[] arr) {
 		
