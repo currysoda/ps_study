@@ -18,29 +18,88 @@ public class Main {
 		
 		int N = Integer.parseInt(br.readLine());
 		
-		String[] str_arr = br.readLine().split(" ");
+		String[]      str_arr = br.readLine().split(" ");
+		List<Integer> list    = new ArrayList<>();
 		
-		List<Integer> list     = new ArrayList<>(N);
-		int           previous = Integer.parseInt(str_arr[0]);
-		for (int i = 0; i < N; i++) {
+		for (int i = 0; i < N; i++)
+		{
 			int temp = Integer.parseInt(str_arr[i]);
-			if (previous == temp) {
-				continue;
-			}
-			else {
-				list.add(temp);
-				previous = temp;
+			
+			list.add(temp);
+		}
+		
+		int[] arr             = new int[list.size()];
+		int[] arr_reverse     = new int[list.size()];
+		int[] dp_up_forward   = new int[list.size()];
+		int[] dp_down_forward = new int[list.size()];
+		int[] dp_up_reverse   = new int[list.size()];
+		int[] dp_down_reverse = new int[list.size()];
+		int[] sum             = new int[list.size()];
+		
+		for (int i = 0; i < list.size(); i++)
+		{
+			arr[i] = list.get(i);
+		}
+		
+		//		System.out.println("arr.length = " + arr.length);
+		
+		Collections.reverse(list);
+		
+		for (int i = 0; i < list.size(); i++)
+		{
+			arr_reverse[i] = list.get(i);
+		}
+		
+		for (int i = 0; i < arr.length; i++)
+		{
+			dp_up_forward[i] = 1;
+			dp_down_forward[i] = 1;
+			dp_up_reverse[i] = 1;
+			dp_down_reverse[i] = 1;
+			
+			for (int j = 0; j < i; j++)
+			{
+				if (arr[j] < arr[i])
+				{
+					dp_up_forward[i] = Math.max(dp_up_forward[i], dp_up_forward[j] + 1);
+				}
+				
+				if (arr[j] > arr[i])
+				{
+					dp_down_forward[i] = Math.max(dp_down_forward[i], dp_down_forward[j] + 1);
+				}
+				
+				if (arr_reverse[j] < arr_reverse[i])
+				{
+					dp_up_reverse[i] = Math.max(dp_up_reverse[i], dp_up_reverse[j] + 1);
+				}
+				
+				if (arr_reverse[j] > arr_reverse[i])
+				{
+					dp_down_reverse[i] = Math.max(dp_down_reverse[i], dp_down_reverse[j] + 1);
+				}
 			}
 		}
 		
-		List<Integer> list2 = new ArrayList<>(list);
-		list2.reversed();
+		int max     = 0;
+		int index_N = dp_up_forward.length;
 		
-		List<Integer> dp = new ArrayList<>(list.size() - 1);
-		for (int i = 0; i < list.size() - 1; i++) {
-			dp.add(list.get(i) - list.get(i + 1));
+		for (int i = 0; i < index_N; i++)
+		{
+			int temp2 = dp_down_forward[i] + dp_down_reverse[index_N - 1 - i] - 1;
+			
+			if (temp2 > max)
+			{
+				max = temp2;
+			}
+			
+			//			System.out.println("temp1 = " + temp1);
+			//			System.out.println("temp2 = " + temp2);
+			//			System.out.println("i = " + i);
 		}
 		
+		bw.write(String.valueOf(max));
+		bw.flush();
 		
 		br.close();
 		bw.close();

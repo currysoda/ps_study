@@ -20,30 +20,21 @@ public class TwoQueens {
 		
 		long[] arr = new long[N + 1];
 		
-		if (N <= 2)
+		arr[0] = 0;
+		arr[1] = 0;
+		arr[2] = 0;
+		
+		for (int i = 3; i <= N; i++)
 		{
-			for (int i = 0; i < arr.length; i++)
-			{
-				arr[i] = 0;
-			}
-		}
-		else
-		{
-			arr[0] = 0;
-			arr[1] = 0;
-			arr[2] = 0;
+			// 2(k-1)^2(k-2)
 			
-			for (int i = 3; i <= N; i++)
-			{
-				// 2(k-1)^2(k-2)
-				
-				long temp   = i - 1;
-				long temp2  = i - 2;
-				long result = arr[i - 1] + (2 * temp * temp * temp2);
-				
-				arr[i] = result;
-			}
+			long temp   = i - 1;
+			long temp2  = i - 2;
+			long result = arr[i - 1] + (2 * temp * temp * temp2);
+			
+			arr[i] = result;
 		}
+		
 		
 		System.out.println("arr[N] = " + arr[N]);
 		
